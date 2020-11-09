@@ -3,6 +3,7 @@ An image built off of [jupyter/base-notebook](https://hub.docker.com/r/jupyter/b
 
 # How to get started
 `docker build -t jupyter-mathematica .`
+
 `docker run -p 8888:8888 jupyter-mathematica:latest`
 
 Then inside the container, run `wolframscript` and login with your Wolfram username and password or get a free license [here](https://wolfram.com/developer-license). You can easily do this from within a shell in Jupyter. After you are logged in, run
