@@ -24,8 +24,9 @@ Now, we need to tell Jupyter about mathematica. Run the following commands in th
 ```shell
 cd /home/jovyan/wolfram/WolframLanguageForJupyter
 ./configure-jupyter.wls add
+jupyter-kernelspec list
 ```
-
+The command `jupyter-kernelspec list` should tell you which kernels are available, make sure you see the kernel we just added in the output.
 Now, you should be able to start a Wolfram Language notebook. Keep in mind that any notebooks you create will be stored in temporary docker volumes. Consider bind mounting some local directory like this:
 
 ``` sh
@@ -40,4 +41,4 @@ docker run -p 8888:8888 -v /home/$USER/jm-files/work:/home/jovyan/work \
 jupyter-mathematica
 ```
 
-If the WolframLanguage Kernel doesn't appear, you may have to re-run the `configure-jupyter.wls add`. I have experience this behavior periodically. After running this command, wait ~20s and the kernel should appear.
+If the WolframLanguage Kernel doesn't appear, you may have to re-run `configure-jupyter.wls add` and then `jupyter-kernelspec list`. I have experienced this behavior periodically and when restarting the container. After running this command, wait a few secodns and the kernel should appear.
